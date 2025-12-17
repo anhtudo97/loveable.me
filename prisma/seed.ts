@@ -1,14 +1,14 @@
-import { PrismaClient, Prisma } from "@/generated/prisma/client";
-import { PrismaPg } from '@prisma/adapter-pg'
-import 'dotenv/config'
+import { PrismaClient, Prisma } from "@/generated/prisma/client"
+import { PrismaPg } from "@prisma/adapter-pg"
+import "dotenv/config"
 
 const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL
 })
 
 const prisma = new PrismaClient({
-  adapter,
-});
+  adapter
+})
 
 const userData: Prisma.UserCreateInput[] = [
   {
@@ -19,14 +19,14 @@ const userData: Prisma.UserCreateInput[] = [
         {
           title: "Join the Prisma Discord",
           content: "https://pris.ly/discord",
-          published: true,
+          published: true
         },
         {
           title: "Prisma on YouTube",
-          content: "https://pris.ly/youtube",
-        },
-      ],
-    },
+          content: "https://pris.ly/youtube"
+        }
+      ]
+    }
   },
   {
     name: "Bob",
@@ -36,17 +36,17 @@ const userData: Prisma.UserCreateInput[] = [
         {
           title: "Follow Prisma on Twitter",
           content: "https://www.twitter.com/prisma",
-          published: true,
-        },
-      ],
-    },
-  },
-];
+          published: true
+        }
+      ]
+    }
+  }
+]
 
 export async function main() {
   for (const u of userData) {
-    await prisma.user.create({ data: u });
+    await prisma.user.create({ data: u })
   }
 }
 
-main();
+main()
