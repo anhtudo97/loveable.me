@@ -1,0 +1,17 @@
+import { inngest } from "./client"
+
+export const helloWorld = inngest.createFunction(
+  { id: "hello-world" },
+  { event: "test/hello.world" },
+  async ({ event, step }) => {
+    await step.sleep("wait-a-moment", "1s")
+
+    // Imagine this is a transcription step
+    await step.sleep("wait-a-moment", "10s")
+
+    // Imagine this is a summary step
+    await step.sleep("wait-a-moment", "10s")
+
+    return { message: `Hello ${event.data.email}!` }
+  }
+)
