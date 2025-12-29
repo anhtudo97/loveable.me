@@ -1,0 +1,16 @@
+# This is a config for E2B sandbox template.
+# You can use template ID (t0b8i7ifoc44j4iwle9i) or template name (cwa-loveable-test-1) to create a sandbox:
+
+# Python SDK
+# from e2b import Sandbox, AsyncSandbox
+# sandbox = Sandbox.create("cwa-loveable-test-1") # Sync sandbox
+# sandbox = await AsyncSandbox.create("cwa-loveable-test-1") # Async sandbox
+
+# JS SDK
+# import { Sandbox } from 'e2b'
+# const sandbox = await Sandbox.create('cwa-loveable-test-1')
+
+team_id = "ac6e50c2-41d4-41e7-9b51-6cff3809ebb4"
+dockerfile = "e2b.Dockerfile"
+template_name = "cwa-loveable-test-1"
+template_id = "t0b8i7ifoc44j4iwle9i"
