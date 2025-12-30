@@ -1,9 +1,9 @@
 import { getSandbox, lastAssistantTextMessageContent } from "@/lib/utils"
+import { PROMPT } from "@/prompt"
 import { Sandbox } from "@e2b/code-interpreter"
 import { createAgent, createNetwork, createTool, openai } from "@inngest/agent-kit"
 import z from "zod"
 import { inngest } from "./client"
-import { PROMPT } from "@/prompt"
 
 export const helloWorld = inngest.createFunction(
   { id: "hello-world" },
